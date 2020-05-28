@@ -6,9 +6,13 @@
   <div class="list-title">List</div>
 
   <div *ngFor='let task of taskList; let i = index' class="task">
-    <div> 
+    <div class="number"> 
       <span class="title">Task number: </span> 
       {{i +1}} 
+
+      <span class="remove" >
+        <button (click)='removeTask(i)'> X </button>
+      </span>
     </div>
     
     <div>
@@ -21,9 +25,6 @@
       <input [(ngModel)]="task.description" type="text">
     </div>
   
-    <div>
-      <button (click)='removeTask(i)'> Remove </button>
-    </div>
   </div>
   
 </div>
